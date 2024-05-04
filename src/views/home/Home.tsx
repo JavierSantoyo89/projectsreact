@@ -49,7 +49,7 @@ const shuffleImages = shuffle(images);
 // console.log(shuffleImages);
 
 const portfolioImages = shuffleImages.map((image) => {
-  return <img key={image + 1} src={image} alt="image" width={randomSize()} />;
+      return <img key={image + 1} src={image} alt="image" width={randomSize()} />;
 });
 // console.log(portfolioImages);
 
