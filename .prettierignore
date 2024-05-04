@@ -3,3 +3,8 @@
 build
 coverage
 dist
+node_modules
+tsconfig.node.json
+tsconfig.node.json
+.prettierrc.json
+tsconfig.json
