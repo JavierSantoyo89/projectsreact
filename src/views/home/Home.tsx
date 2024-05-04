@@ -1,5 +1,9 @@
-import { Footer, Header } from "../../components";
+import { useEffect } from "react";
+import '../../index.css'
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import {Header,Footer} from "@components/parcials";
 import img1 from "../../assets/1.jpg";
 import img2 from "../../assets/2.png";
 import img3 from "../../assets/3.jpg";
@@ -50,15 +54,44 @@ const portfolioImages = shuffleImages.map((image) => {
 // console.log(portfolioImages);
 
 export const Home = () => {
+  useEffect(() => {
+              toastyfyLoadingPage();
+  }, []);
+
+  function toastyfyLoadingPage() {
+    toast("Busca el proyecto que mas te guste!!!");
+  }
   return (
-    <>
+    <main  className=" min-w-min">
       <Header />
       <ResponsiveMasonry
-        columnsCountBreakPoints={{ 350: 2, 750: 3, 900: 5, 1200: 6 }}
+        columnsCountBreakPoints={{
+          100: 1,
+          350: 2,
+          750: 3,
+          900: 5,
+          1200: 6,
+          1500: 7,
+          1800: 8,
+          2100: 9,
+          2400: 10,
+        }}
       >
         <Masonry>{portfolioImages}</Masonry>
       </ResponsiveMasonry>
       <Footer />
-    </>
-  );
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+    </main>
+  )
 };

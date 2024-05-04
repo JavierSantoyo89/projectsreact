@@ -1,7 +1,7 @@
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import {Home} from "../views";
-import {Error} from "../components";
+import {Home} from "@views/index";
+import {Error} from "@components/error/Error404";
 const router = createBrowserRouter([
   {
     path: "/",

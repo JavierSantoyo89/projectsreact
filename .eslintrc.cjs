@@ -6,14 +6,19 @@ module.exports = {
     es2021: true,
   },
   extends: [
+    "airbnb-typescript/base",
+    "next/core-web-vitals",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
     "plugin:prettier/recommended",
+    "Plugin:react/jsx-runtime",
+    "prettier/react",
+    "prettier",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
-  plugins: ["react-refresh", "@typescript-eslint", "react"],
+  plugins: ["react-refresh", "@typescript-eslint", "react", "prettier"],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -29,6 +34,7 @@ module.exports = {
     ],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
+   
   },
   ignorePatterns: ["node_modules/", "build/", "dist/", "vite.config.ts"],
 };
