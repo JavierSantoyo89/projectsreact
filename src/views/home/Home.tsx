@@ -20,7 +20,7 @@ import img13 from '../../assets/13.jpg'
 import img14 from '../../assets/14.jpg'
 const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14]
 //* Crete random size of images
-function randomSize(min = 550, max = 800) {
+function randomSize(min = 250, max = 800) {
 	min = Math.ceil(150)
 	max = Math.floor(300)
 	return Math.floor(Math.random() * (max - min) + min)
@@ -40,6 +40,7 @@ const portfolioImages = shuffleImages.map(image => {
 			src={image}
 			alt='image'
 			width={randomSize()}
+			height={randomSize()}
 		/>
 	)
 })
@@ -54,7 +55,7 @@ export const Home = () => {
 		toast('Busca el proyecto que mas te guste!!!')
 	}
 	return (
-		<main className=' min-w-min'>
+		<main className=' min-w-min bg-black'>
 			<Header />
 			<ResponsiveMasonry
 				columnsCountBreakPoints={{

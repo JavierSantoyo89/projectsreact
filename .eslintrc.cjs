@@ -24,6 +24,7 @@ module.exports = {
 	rules: {
 		'react-hooks/rules-of-hooks': 'error',
 		'react-hooks/exhaustive-deps': 'warn',
+		'prettier/prettier': 0,
 	},
 	ignorePatterns: ['node_modules/', 'build/', 'dist/', 'vite.config.ts'],
 }
