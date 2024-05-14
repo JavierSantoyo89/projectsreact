@@ -1,6 +1,7 @@
 import { Suspense } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Home } from '@views/index'
+import HomeBlog from '@views/blog/home/Home'
 import { Error } from '@components/error/Error404'
 import { TicketMasterPirate } from '@views/ticketmaster/TicketMasterPirate'
 import  Profile  from '@views/ticketmaster/Profile/Profile'
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
 			element: <LikedEvents />,
 		  },
 		],
+	  },
+	  {
+ path: "/blog",
+		element: <HomeBlog />,
 	  },
 ])
 

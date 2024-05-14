@@ -1,4 +1,25 @@
+import { useEffect, useState } from 'react'
+import styles from './HeaderThemeSwitch.module.css'
+import {useStore} from '../../state/globals'
 export const Header = () => {
+	const [theme, setTheme ] = useState(true)
+	const globalTheme = useStore((state) => state.theme) 
+	function toggleTheme(){
+
+		globalTheme ? setTheme(false) : setTheme(true)
+
+		setTheme(!theme)
+		console.log('el bolean theme es: ',globalTheme);
+		 
+	}
+	
+	useEffect(() => {
+		// const selectTheme = localStorage.getItem('theme')
+		console.log(theme);
+		
+	},[globalTheme])
+	
+	
 	return (
 		<nav className='bg-white border-gray-200 dark:bg-gray-900'>
 			<div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
@@ -12,6 +33,7 @@ export const Header = () => {
 					/>
 					<span className='self-center text-2xl font-semibold whitespace-nowrap dark:text-white'>Flowbite</span>
 				</a>
+				<p>actualmente es el theme: {theme ? 'dark' : 'light'}</p>
 				<div className='flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse'>
 					<button
 						type='button'
@@ -198,6 +220,10 @@ export const Header = () => {
 								</a>
 							</li>
 						</ul>
+					</div>
+					<div className={styles.toggle}>
+						<input type='checkbox' onChange={toggleTheme}/>
+						<label></label>
 					</div>
 					<button
 						data-collapse-toggle='navbar-language'

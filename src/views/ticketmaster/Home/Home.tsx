@@ -24,11 +24,15 @@ interface Page {
 }
 interface EventData {
 	// Definname:                     string;
+	data ?: { _embedded: { events: EventData[] } }, 
+	isLoading ?: boolean,
+	 error	?: string, 
+	fetchEvents ?: (params:string) => void
 
 }
 
 function Home(): JSX.Element {
-	const { data, isLoading, error, fetchEvents } = useEventsResults()
+	const { data , isLoading, error, fetchEvents } = useEventsResults()
 	const events = useMemo<EventData[]>(() => data?._embedded?.events || [], [data?._embedded?.events])
 	const page = useMemo<Page>(() => data?.page || {}, [data?.page])
 	const [searchTerm, setSearchTerm] = useState('')

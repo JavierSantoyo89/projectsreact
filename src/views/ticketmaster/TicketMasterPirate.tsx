@@ -4,7 +4,9 @@ import Navbar from '@components/TicketMasterPirate/Navbar'
 import {Loading} from '@components/TicketMasterPirate/Loading/Loading'
 import Events from '../../components/TicketMasterPirate/Events/Events'
 import styles from './TicketMasterPirate.module.css'
+// import useEventsResults from '../../state/ticketmasterpirate/events-results'
 import useEventsResults from '../../state/ticketmasterpirate/events-results'
+
 import { Link } from 'react-router-dom'
 export const TicketMasterPirate = () => {
 	const { data, isLoading, error, fetchEvents } = useEventsResults()
@@ -19,7 +21,7 @@ export const TicketMasterPirate = () => {
 
 	fetchMyEventsRef.current = fetchEvents
 
-	const handleNavbarSearch = term => {
+	const handleNavbarSearch = (term: string) => {
 		setSearchTerm(term)
 		fetchEvents(`&keyword=` + term)
 		// console.log("El paramatero es: " + term);

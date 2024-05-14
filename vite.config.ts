@@ -18,6 +18,7 @@ export default defineConfig({
 			'@store': '/src/store',
 			'@styles': '/src/styles',
 			'@types': '/src/types',
+			'@state': '/src/state',
 		},
 	},
 })
